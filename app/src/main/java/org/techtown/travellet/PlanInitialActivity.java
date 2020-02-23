@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlanInitialActivity extends AppCompatActivity {
-
+    // github test
     Button addButton, placeSearch;
 
     ListView listView;
