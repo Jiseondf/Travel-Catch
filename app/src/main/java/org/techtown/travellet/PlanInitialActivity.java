@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 public class PlanInitialActivity extends AppCompatActivity {
-
+    // github test
     Button addButton, placeSearch;
 
     @Override
