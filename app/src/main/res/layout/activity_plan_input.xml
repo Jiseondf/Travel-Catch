@@ -184,6 +184,7 @@
                         android:background="@drawable/ic_lodging_24px"/>
 
                     <TextView
+                        android:id="@+id/lodgingText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
@@ -207,6 +208,7 @@
                         android:background="@drawable/ic_food_24px"/>
 
                     <TextView
+                        android:id="@+id/foodText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
@@ -230,6 +232,7 @@
                         android:background="@drawable/ic_shopping_24px"/>
 
                     <TextView
+                        android:id="@+id/shoppingText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
@@ -253,6 +256,7 @@
                         android:background="@drawable/ic_tourism_24px"/>
 
                     <TextView
+                        android:id="@+id/tourismText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
@@ -276,6 +280,7 @@
                         android:background="@drawable/ic_etc_24px"/>
 
                     <TextView
+                        android:id="@+id/etcText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"

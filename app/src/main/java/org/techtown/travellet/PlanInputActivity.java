@@ -11,14 +11,15 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 public class PlanInputActivity extends AppCompatActivity {
 
-    int hour, min;
+    int hour, min, category=-1;
     String place;
-    String memo, category;
+    String memo;
 
     TimePicker timePicker;
 
@@ -26,6 +27,10 @@ public class PlanInputActivity extends AppCompatActivity {
     ImageButton placeSelect;
     TextView selectTitleText;
     EditText editMemo;
+
+    RelativeLayout lodging, food, shopping, tourism, etc;
+    ImageButton selectLodging, selectFood, selectShopping, selectTourism, selectEtc;
+    TextView lodgingText, foodText, shoppingText, tourismText, etcText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +62,34 @@ public class PlanInputActivity extends AppCompatActivity {
         editMemo = (EditText) findViewById(R.id.memo);
         memo = editMemo.getText().toString();
 
+        lodging = (RelativeLayout) findViewById(R.id.lodging);
+        food = (RelativeLayout) findViewById(R.id.food);
+        shopping = (RelativeLayout) findViewById(R.id.shopping);
+        tourism = (RelativeLayout) findViewById(R.id.tourism);
+        etc = (RelativeLayout) findViewById(R.id.etc);
 
+        selectLodging = (ImageButton) findViewById(R.id.selectLodging);
+        selectFood = (ImageButton) findViewById(R.id.selectFood);
+        selectShopping = (ImageButton) findViewById(R.id.selectShopping);
+        selectTourism = (ImageButton) findViewById(R.id.selectTourism);
+        selectEtc = (ImageButton) findViewById(R.id.selectETC);
+
+        lodgingText = (TextView) findViewById(R.id.lodgingText);
+        foodText = (TextView) findViewById(R.id.foodText);
+        shoppingText = (TextView) findViewById(R.id.shoppingText);
+        tourismText = (TextView) findViewById(R.id.tourismText);
+        etcText = (TextView) findViewById(R.id.etcText);
+
+
+        lodging.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(category !=-1 && category != 1){
+                    category = 1;
+                    selectLodging.setBackgroundResource(R.drawable.ic_lodging_24px);
+                }
+            }
+        });
 
         add = (Button) findViewById(R.id.addButton);
         add.setOnClickListener(new View.OnClickListener() {
