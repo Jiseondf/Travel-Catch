@@ -10,272 +10,291 @@
         android:id="@+id/inputToPlan"
         android:background="@drawable/ic_back"
         android:layout_marginTop="24dp"
-        android:layout_marginLeft="16dp"/>
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="28dp"/>
 
-    <LinearLayout
-        android:layout_below="@id/inputToPlan"
+    <ScrollView
+        android:id="@+id/scr"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginTop="28dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/soft_black"
-            android:textSize="24sp"
-            android:text="Add Plan"
-            android:fontFamily="@font/roboto_medium"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Time"
-            android:textSize="12sp"
-            android:textColor="@color/deep_grey"
-            android:fontFamily="@font/roboto_regular"/>
-
-        <RelativeLayout
+        android:layout_below="@+id/inputToPlan"
+        android:layout_above="@+id/addButton">
+        <LinearLayout
+            android:layout_below="@id/inputToPlan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp">
 
             <TextView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/soft_black"
+                android:textSize="24sp"
+                android:text="Add Plan"
+                android:fontFamily="@font/roboto_medium"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Time"
+                android:textSize="12sp"
+                android:textColor="@color/deep_grey"
+                android:fontFamily="@font/roboto_regular"/>
+
+            <TimePicker
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/select_time"
-                android:textColor="@color/soft_grey"
-                android:textSize="14sp"
-                android:text="Select your trip time"
-                android:fontFamily="@font/roboto_light"/>
+                android:timePickerMode="spinner" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:id="@+id/SelectTimeButton"
-                android:background="@drawable/ic_down"/>
-
-            <View
+            <!--<RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/icon_grey"
-                android:layout_below="@id/select_time"
-                android:layout_marginTop="8dp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp">
 
-        </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/select_time"
+                    android:textColor="@color/soft_grey"
+                    android:textSize="14sp"
+                    android:text="Select your trip time"
+                    android:fontFamily="@font/roboto_light"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Place"
-            android:textSize="12sp"
-            android:textColor="@color/deep_grey"
-            android:fontFamily="@font/roboto_regular"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/SelectTimeButton"
+                    android:background="@drawable/ic_down"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/icon_grey"
+                    android:layout_below="@id/select_time"
+                    android:layout_marginTop="8dp"/>
+
+            </RelativeLayout>-->
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/select_place"
-                android:textColor="@color/soft_grey"
-                android:textSize="14sp"
-                android:text="Select your trip time"
-                android:fontFamily="@font/roboto_light"/>
+                android:layout_marginTop="20dp"
+                android:text="Place"
+                android:textSize="12sp"
+                android:textColor="@color/deep_grey"
+                android:fontFamily="@font/roboto_regular"/>
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:id="@+id/SelectPlaceButton"
-                android:background="@drawable/ic_down"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/icon_grey"
-                android:layout_below="@id/select_place"
-                android:layout_marginTop="8dp"/>
-
-        </RelativeLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Memo"
-            android:textSize="12sp"
-            android:textColor="@color/deep_grey"
-            android:fontFamily="@font/roboto_regular"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp">
-
-            <EditText
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Write memo."
-                android:background="@null"
-                android:id="@+id/memo"
-                android:textColor="@color/soft_black"
-                android:textSize="14sp"
-                android:fontFamily="@font/roboto_light"/>
+                android:layout_marginTop="6dp">
 
-            <View
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/select_place"
+                    android:textColor="@color/soft_grey"
+                    android:textSize="14sp"
+                    android:text="Select your trip time"
+                    android:fontFamily="@font/roboto_light"/>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/SelectPlaceButton"
+                    android:background="@drawable/ic_down"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/icon_grey"
+                    android:layout_below="@id/select_place"
+                    android:layout_marginTop="8dp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Memo"
+                android:textSize="12sp"
+                android:textColor="@color/deep_grey"
+                android:fontFamily="@font/roboto_regular"/>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/icon_grey"
-                android:layout_below="@id/memo"
-                android:layout_marginTop="8dp"/>
-
-        </RelativeLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Category"
-            android:textSize="12sp"
-            android:textColor="@color/deep_grey"
-            android:fontFamily="@font/roboto_regular"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="5">
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <ImageButton
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:id="@+id/selectLodging"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/ic_lodging_24px"/>
+                android:layout_marginTop="6dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/selectLodging"
-                    android:text="Lodging"
-                    android:textSize="10sp"
-                    android:textColor="@color/icon_grey"
-                    android:fontFamily="@font/roboto_regular"/>
+                    android:hint="Write memo."
+                    android:background="@null"
+                    android:id="@+id/memo"
+                    android:textColor="@color/soft_black"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_light"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/icon_grey"
+                    android:layout_below="@id/memo"
+                    android:layout_marginTop="8dp"/>
+
             </RelativeLayout>
 
-            <RelativeLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <ImageButton
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:id="@+id/selectFood"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/ic_food_24px"/>
+                android:layout_marginTop="20dp"
+                android:text="Category"
+                android:textSize="12sp"
+                android:textColor="@color/deep_grey"
+                android:fontFamily="@font/roboto_regular"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/selectFood"
-                    android:text="Food"
-                    android:textSize="10sp"
-                    android:textColor="@color/icon_grey"
-                    android:fontFamily="@font/roboto_regular"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <ImageButton
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:id="@+id/selectShopping"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/ic_shopping_24px"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="5">
 
-                <TextView
+                <RelativeLayout
+                    android:id="@+id/lodging"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/selectShopping"
-                    android:text="Shopping"
-                    android:textSize="10sp"
-                    android:textColor="@color/icon_grey"
-                    android:fontFamily="@font/roboto_regular"/>
-            </RelativeLayout>
+                    android:layout_weight="1">
+                    <ImageButton
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/selectLodging"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_lodging_24px"/>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <ImageButton
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:id="@+id/selectTourism"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/ic_tourism_24px"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/selectLodging"
+                        android:text="Lodging"
+                        android:textSize="10sp"
+                        android:textColor="@color/icon_grey"
+                        android:fontFamily="@font/roboto_regular"/>
+                </RelativeLayout>
 
-                <TextView
+                <RelativeLayout
+                    android:id="@+id/food"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/selectTourism"
-                    android:text="Tourism"
-                    android:textSize="10sp"
-                    android:textColor="@color/icon_grey"
-                    android:fontFamily="@font/roboto_regular"/>
-            </RelativeLayout>
+                    android:layout_weight="1">
+                    <ImageButton
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/selectFood"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_food_24px"/>
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <ImageButton
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:id="@+id/selectETC"
-                    android:layout_centerHorizontal="true"
-                    android:background="@drawable/ic_etc_24px"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/selectFood"
+                        android:text="Food"
+                        android:textSize="10sp"
+                        android:textColor="@color/icon_grey"
+                        android:fontFamily="@font/roboto_regular"/>
+                </RelativeLayout>
 
-                <TextView
+                <RelativeLayout
+                    android:id="@+id/shopping"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@id/selectETC"
-                    android:text="Etc"
-                    android:textSize="10sp"
-                    android:textColor="@color/icon_grey"
-                    android:fontFamily="@font/roboto_regular"/>
-            </RelativeLayout>
+                    android:layout_weight="1">
+                    <ImageButton
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/selectShopping"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_shopping_24px"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/selectShopping"
+                        android:text="Shopping"
+                        android:textSize="10sp"
+                        android:textColor="@color/icon_grey"
+                        android:fontFamily="@font/roboto_regular"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tourism"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <ImageButton
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/selectTourism"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_tourism_24px"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/selectTourism"
+                        android:text="Tourism"
+                        android:textSize="10sp"
+                        android:textColor="@color/icon_grey"
+                        android:fontFamily="@font/roboto_regular"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/etc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <ImageButton
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:id="@+id/selectETC"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/ic_etc_24px"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/selectETC"
+                        android:text="Etc"
+                        android:textSize="10sp"
+                        android:textColor="@color/icon_grey"
+                        android:fontFamily="@font/roboto_regular"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
     <Button
-        android:layout_width="296dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_background_full"
         android:text="ADD"
@@ -285,5 +304,6 @@
         android:layout_marginBottom="32dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_margin="32dp"
         android:id="@+id/addButton"/>
 </RelativeLayout>

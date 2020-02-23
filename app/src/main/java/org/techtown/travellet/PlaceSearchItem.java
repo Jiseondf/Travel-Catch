@@ -14,7 +14,6 @@ import java.io.Serializable;
 public class PlaceSearchItem implements Serializable {
 
     String placeListName, placeListAddr, placeListType, placeListThumb;
-    Button placeListLike;
 
     public PlaceSearchItem(String placeListThumb, String placeListName, String placeListAddr, String placeListType) {
         this.placeListThumb = placeListThumb;

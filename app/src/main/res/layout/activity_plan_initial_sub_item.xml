@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="21dp"
             android:background="@drawable/ic_place_24px"/>
-        
+
         <ImageView
             android:layout_width="2dp"
             android:layout_height="147dp"

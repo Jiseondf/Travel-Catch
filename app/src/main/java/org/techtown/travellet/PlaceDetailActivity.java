@@ -2,6 +2,7 @@ package org.techtown.travellet;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -9,6 +10,11 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,17 +37,26 @@ public class PlaceDetailActivity extends AppCompatActivity {
     int placeID;
 
     TextView detailTitle, detailType, detailOverview, detailAddr, detailTel, detailLink;
-    RelativeLayout detailImage;
+    ImageView detailImage;
+    ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_place_detail);
 
         Intent intent = getIntent();
         placeID = intent.getIntExtra("id", 0);
 
-
+        back = (ImageButton) findViewById(R.id.detailToList);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         detailTitle = (TextView) findViewById(R.id.detailTitle);
         detailType = (TextView) findViewById(R.id.detailType);
@@ -49,7 +64,7 @@ public class PlaceDetailActivity extends AppCompatActivity {
         detailAddr = (TextView) findViewById(R.id.detailAddress);
         detailTel = (TextView) findViewById(R.id.detailTel);
         detailLink = (TextView) findViewById(R.id.detailLink);
-        detailImage = (RelativeLayout) findViewById(R.id.detailImage);
+        detailImage = (ImageView) findViewById(R.id.detailImage);
 
         getPlaceDetail(placeID);
     }
@@ -248,7 +263,10 @@ public class PlaceDetailActivity extends AppCompatActivity {
             detailAddr.setText(address+"\n"+dAddress);
             detailTel.setText(tel);
             detailLink.setText(link);
-            //Glide.with(getApplicationContext()).load(image).into(detailImage);
+            GradientDrawable drawable = (GradientDrawable) getApplicationContext().getDrawable(R.drawable.image_rounding);
+            detailImage.setBackground(drawable);
+            detailImage.setClipToOutline(true);
+            Glide.with(getApplicationContext()).load(image).into(detailImage);
         }
     }
 }

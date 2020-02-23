@@ -45,9 +45,15 @@
                 android:fontFamily="@font/roboto_regular"/>
 
             <RelativeLayout
-                android:id="@+id/detailImage"
                 android:layout_width="match_parent"
-                android:layout_height="196dp">
+                android:layout_height="196dp"
+                android:layout_marginTop="32dp">
+                
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/detailImage"
+                    android:scaleType="centerCrop"/>
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -64,9 +70,7 @@
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 android:fontFamily="@font/roboto_medium"
-                android:layout_marginBottom="32dp"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
+                android:layout_marginTop="20dp"
                 android:id="@+id/moreInfo"/>
 
             <View

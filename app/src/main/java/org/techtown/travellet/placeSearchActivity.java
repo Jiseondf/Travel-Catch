@@ -62,6 +62,7 @@ public class placeSearchActivity extends AppCompatActivity {
 
     EditText editText;
     TextView textView;
+    ImageButton back;
 
     Button searchLodging, searchFood, searchShopping, searchTourism, searchETC;
     boolean lodgingState=false, foodState=false, shoppingState=false, tourismState=false, etcState=false;
@@ -80,6 +81,15 @@ public class placeSearchActivity extends AppCompatActivity {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
+
+        back = (ImageButton) findViewById(R.id.placeToPlan);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
 
         listView = (ListView) findViewById(R.id.listView);
         //listView.setAdapter(adapter);
@@ -233,7 +243,6 @@ public class placeSearchActivity extends AppCompatActivity {
                     searchTourism.setTextColor(getResources().getColor(R.color.blue, getTheme()));
 
                 }
-
             }
         });
 

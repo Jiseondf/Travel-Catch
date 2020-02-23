@@ -16,7 +16,6 @@ public class PlaceSearchItemView extends LinearLayout {
 
     ImageView placeListThumb;
     TextView placeListName, placeListAddr, placeListType;
-    Button placeListLike;
 
     public PlaceSearchItemView(Context context) {
         super(context);
@@ -44,7 +43,6 @@ public class PlaceSearchItemView extends LinearLayout {
         placeListThumb.setBackground(drawable);
         placeListThumb.setClipToOutline(true);
         Glide.with(getContext()).load(thumb).into(placeListThumb);
-        //Glide.with(getContext()).load(thumb).error(R.drawable.p);
     }
 
     public void setPlaceListName(String name) {

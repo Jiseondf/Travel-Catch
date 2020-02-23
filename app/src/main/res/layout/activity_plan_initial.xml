@@ -227,19 +227,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="12sp"
                     android:fontFamily="@font/roboto_regular"
+                    android:text="SUN"
                     android:textColor="@color/soft_grey"
-                    android:text="SUN"/>
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:textSize="16sp"
                     android:fontFamily="@font/roboto_regular"
+                    android:text="08"
                     android:textColor="@color/soft_grey"
-                    android:text="08"/>
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -385,22 +385,16 @@
 
     </RelativeLayout>
 
-    <ScrollView
+    <ListView
+        android:id="@+id/con"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/relative1"
-        android:layout_above="@id/addButton"
-        android:scrollbars="none">
-
-        <LinearLayout
-            android:id="@+id/con"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="32dp">
-        </LinearLayout>
-
-    </ScrollView>
+        android:orientation="vertical"
+        android:layout_margin="32dp"
+        android:layout_below="@+id/relative1"
+        android:divider="@null"
+        android:dividerHeight="0dp">
+    </ListView>
     
     <Button
         android:layout_alignParentBottom="true"
