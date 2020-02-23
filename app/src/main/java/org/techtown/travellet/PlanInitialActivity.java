@@ -54,7 +54,7 @@ public class PlanInitialActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), placeSearchActivity.class);
 
-                startActivity(intent);
+                startActivityForResult(intent, 102);
             }
         });
     }
@@ -111,6 +111,9 @@ public class PlanInitialActivity extends AppCompatActivity {
 
         if(requestCode == 101){
             if(intent != null){
+                time = String.valueOf(intent.getIntExtra("hour", 0));
+                name = intent.getStringExtra("title");
+                memo = intent.getStringExtra("memo");
                 adapter.addItem(new PlanInitialSubItem(time, name, memo, tbText, tText, tIc, tBudget));
             }
         }

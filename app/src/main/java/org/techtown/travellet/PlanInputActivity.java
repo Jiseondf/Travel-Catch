@@ -28,9 +28,7 @@ public class PlanInputActivity extends AppCompatActivity {
     TextView selectTitleText;
     EditText editMemo;
 
-    RelativeLayout lodging, food, shopping, tourism, etc;
-    ImageButton selectLodging, selectFood, selectShopping, selectTourism, selectEtc;
-    TextView lodgingText, foodText, shoppingText, tourismText, etcText;
+    ImageButton lodging, food, shopping, tourism, etc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,31 +60,79 @@ public class PlanInputActivity extends AppCompatActivity {
         editMemo = (EditText) findViewById(R.id.memo);
         memo = editMemo.getText().toString();
 
-        lodging = (RelativeLayout) findViewById(R.id.lodging);
-        food = (RelativeLayout) findViewById(R.id.food);
-        shopping = (RelativeLayout) findViewById(R.id.shopping);
-        tourism = (RelativeLayout) findViewById(R.id.tourism);
-        etc = (RelativeLayout) findViewById(R.id.etc);
-
-        selectLodging = (ImageButton) findViewById(R.id.selectLodging);
-        selectFood = (ImageButton) findViewById(R.id.selectFood);
-        selectShopping = (ImageButton) findViewById(R.id.selectShopping);
-        selectTourism = (ImageButton) findViewById(R.id.selectTourism);
-        selectEtc = (ImageButton) findViewById(R.id.selectETC);
-
-        lodgingText = (TextView) findViewById(R.id.lodgingText);
-        foodText = (TextView) findViewById(R.id.foodText);
-        shoppingText = (TextView) findViewById(R.id.shoppingText);
-        tourismText = (TextView) findViewById(R.id.tourismText);
-        etcText = (TextView) findViewById(R.id.etcText);
+        lodging = (ImageButton) findViewById(R.id.lodging);
+        food = (ImageButton) findViewById(R.id.food);
+        shopping = (ImageButton) findViewById(R.id.shopping);
+        tourism = (ImageButton) findViewById(R.id.tourism);
+        etc = (ImageButton) findViewById(R.id.etc);
 
 
         lodging.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(category !=-1 && category != 1){
+                if(category ==-1 || category != 1){
                     category = 1;
-                    selectLodging.setBackgroundResource(R.drawable.ic_lodging_24px);
+                    lodging.setBackgroundResource(R.drawable.ic_lodging_selected);
+                    food.setBackgroundResource(R.drawable.ic_food);
+                    shopping.setBackgroundResource(R.drawable.ic_shopping);
+                    tourism.setBackgroundResource(R.drawable.ic_tourism);
+                    etc.setBackgroundResource(R.drawable.ic_etc);
+                }
+            }
+        });
+
+        food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(category ==-1 || category != 2){
+                    category = 2;
+                    lodging.setBackgroundResource(R.drawable.ic_lodging);
+                    food.setBackgroundResource(R.drawable.ic_food_selected);
+                    shopping.setBackgroundResource(R.drawable.ic_shopping);
+                    tourism.setBackgroundResource(R.drawable.ic_tourism);
+                    etc.setBackgroundResource(R.drawable.ic_etc);
+                }
+            }
+        });
+
+        shopping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(category ==-1 || category != 3){
+                    category = 3;
+                    lodging.setBackgroundResource(R.drawable.ic_lodging);
+                    food.setBackgroundResource(R.drawable.ic_food);
+                    shopping.setBackgroundResource(R.drawable.ic_shopping_selected);
+                    tourism.setBackgroundResource(R.drawable.ic_tourism);
+                    etc.setBackgroundResource(R.drawable.ic_etc);
+                }
+            }
+        });
+
+        tourism.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(category ==-1 || category != 4){
+                    category = 4;
+                    lodging.setBackgroundResource(R.drawable.ic_lodging);
+                    food.setBackgroundResource(R.drawable.ic_food);
+                    shopping.setBackgroundResource(R.drawable.ic_shopping);
+                    tourism.setBackgroundResource(R.drawable.ic_tourism_selected);
+                    etc.setBackgroundResource(R.drawable.ic_etc);
+                }
+            }
+        });
+
+        etc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(category ==-1 || category != 5){
+                    category = 5;
+                    lodging.setBackgroundResource(R.drawable.ic_lodging);
+                    food.setBackgroundResource(R.drawable.ic_food);
+                    shopping.setBackgroundResource(R.drawable.ic_shopping);
+                    tourism.setBackgroundResource(R.drawable.ic_tourism);
+                    etc.setBackgroundResource(R.drawable.ic_etc_selected);
                 }
             }
         });
@@ -114,6 +160,10 @@ public class PlanInputActivity extends AppCompatActivity {
 
     public void returnToBack(){
         Intent intent = new Intent();
+        intent.putExtra("title", place);
+        intent.putExtra("memo", memo);
+        intent.putExtra("hour", hour);
+        intent.putExtra("min", min);
 
         setResult(RESULT_OK, intent);
         finish();
