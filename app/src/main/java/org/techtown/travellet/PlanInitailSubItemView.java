@@ -60,7 +60,7 @@ public class PlanInitailSubItemView extends LinearLayout {
     }
 
     public void setPlaceMemo(String memo) {
-        this.placeName.setText(memo);
+        this.placeMemo.setText(memo);
     }
 
     public void setTransBudgetText(String tbText) {

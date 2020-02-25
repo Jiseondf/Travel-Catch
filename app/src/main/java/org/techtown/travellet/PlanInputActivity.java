@@ -38,13 +38,6 @@ public class PlanInputActivity extends AppCompatActivity {
         setContentView(R.layout.activity_plan_input);
 
         timePicker = (TimePicker) findViewById(R.id.select_time);
-        if(android.os.Build.VERSION.SDK_INT>= android.os.Build.VERSION_CODES.M){
-            hour = timePicker.getHour();
-            min = timePicker.getMinute();
-        } else{
-            hour = timePicker.getCurrentHour();
-            min = timePicker.getCurrentMinute();
-        }
 
         placeSelect = (ImageButton) findViewById(R.id.SelectPlaceButton);
         placeSelect.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +51,6 @@ public class PlanInputActivity extends AppCompatActivity {
         selectTitleText = (TextView) findViewById(R.id.select_place);
 
         editMemo = (EditText) findViewById(R.id.memo);
-        memo = editMemo.getText().toString();
 
         lodging = (ImageButton) findViewById(R.id.lodging);
         food = (ImageButton) findViewById(R.id.food);
@@ -159,6 +151,14 @@ public class PlanInputActivity extends AppCompatActivity {
     }
 
     public void returnToBack(){
+        if(android.os.Build.VERSION.SDK_INT>= android.os.Build.VERSION_CODES.M){
+            hour = timePicker.getHour();
+            min = timePicker.getMinute();
+        } else{
+            hour = timePicker.getCurrentHour();
+            min = timePicker.getCurrentMinute();
+        }
+        memo = editMemo.getText().toString();
         Intent intent = new Intent();
         intent.putExtra("title", place);
         intent.putExtra("memo", memo);
